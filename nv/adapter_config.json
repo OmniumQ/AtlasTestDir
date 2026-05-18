@@ -1,0 +1,17 @@
+{
+    "base_model_name_or_path": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+    "peft_type": "LORA",
+    "task_type": "CAUSAL_LM",
+    "r": 8,
+    "lora_alpha": 16,
+    "target_modules": [
+        "q_proj",
+        "v_proj",
+        "k_proj",
+        "o_proj"
+    ],
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "inference_mode": true,
+    "ust_calibration": "0.6335446"
+}

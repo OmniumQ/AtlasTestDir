@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UST Live Calculator | fromhomosapienstohomodata.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1320;
+    --panel: #111827;
+    --border: #1e2d45;
+    --accent: #00d4ff;
+    --accent2: #ff6b35;
+    --accent3: #7fff6b;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --gold: #fbbf24;
+    --font-mono: 'Space Mono', monospace;
+    --font-display: 'Syne', sans-serif;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-mono);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Animated background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .header .tag {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.2s;
+  }
+
+  .header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.4s;
+  }
+
+  .header h1 span { color: var(--accent); }
+
+  .header .subtitle {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 500px;
+    margin-inline: auto;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.6s;
+  }
+
+  /* Core constants strip */
+  .constants-strip {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.8s;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .const-card {
+    flex: 1;
+    min-width: 120px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .const-card .label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .const-card .value {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Main calculator */
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 600px) {
+    .calc-grid { grid-template-columns: 1fr; }
+  }
+
+  .input-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1s;
+  }
+
+  .input-panel h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .field {
+    margin-bottom: 16px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .field input, .field select {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .field input:focus, .field select:focus {
+    border-color: var(--accent);
+  }
+
+  .field select option { background: var(--bg); }
+
+  .btn-calc {
+    width: 100%;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-calc:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* Results panel */
+  .results-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent3);
+    padding: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.1s;
+  }
+
+  .results-panel h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    gap: 12px;
+  }
+
+  .result-row:last-child { border-bottom: none; }
+
+  .result-label {
+    font-size: 11px;
+    color: var(--muted);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .result-value {
+    font-size: 13px;
+    color: var(--accent3);
+    text-align: right;
+    word-break: break-all;
+  }
+
+  .result-value.highlight {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .result-value.ok { color: #4ade80; }
+  .result-value.warn { color: var(--accent2); }
+
+  /* ONL Visualization */
+  .onl-viz {
+    margin-top: 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.2s;
+  }
+
+  .onl-viz h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .onl-bar {
+    height: 48px;
+    display: flex;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .onl-segment {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .onl-segment::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.05);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .onl-segment:hover::after { opacity: 1; }
+
+  .seg-c  { background: rgba(0,212,255,0.15); color: var(--accent); border-right: 1px solid var(--accent); }
+  .seg-om { background: rgba(251,191,36,0.1); color: var(--gold); }
+  .seg-q  { background: rgba(127,255,107,0.1); color: var(--accent3); border-left: 1px solid var(--accent3); }
+
+  .onl-legend {
+    display: flex;
+    gap: 20px;
+    font-size: 11px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* Prime test */
+  .prime-section {
+    margin-top: 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.3s;
+  }
+
+  .prime-section h3 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 20px;
+  }
+
+  .prime-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .prime-input-row input {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .prime-input-row input:focus { border-color: var(--accent2); }
+
+  .btn-prime {
+    background: var(--accent2);
+    color: white;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-prime:hover { background: #ff8c5a; }
+
+  .prime-result {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+    min-height: 80px;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.5s;
+    padding-bottom: 40px;
+  }
+
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { color: #fff; }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(20px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  /* Pulse on new results */
+  @keyframes pulse {
+    0%,100% { border-color: var(--border); }
+    50%     { border-color: var(--accent3); }
+  }
+
+  .results-panel.updated {
+    animation: pulse 0.6s ease;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="tag">Unified Source Theory · Live Calculator</div>
+    <h1>UST <span>N<sub>s,q</sub></span> Analysis Tool</h1>
+    <p class="subtitle">
+      Test your data against the UST universal constant
+      N<sub>b</sub> = 0.63354460 — derived from Einstein tensor
+      maximisation with zero free parameters.
+    </p>
+  </div>
+
+  <!-- Core constants -->
+  <div class="constants-strip">
+    <div class="const-card">
+      <div class="label">N_b (Blueprint)</div>
+      <div class="value">0.63354460</div>
+    </div>
+    <div class="const-card">
+      <div class="label">C_cb (Channel C)</div>
+      <div class="value">0.36645540</div>
+    </div>
+    <div class="const-card">
+      <div class="label">T_Om (Tunnel)</div>
+      <div class="value">0.23252885</div>
+    </div>
+    <div class="const-card">
+      <div class="label">Ω_Om (0-Element)</div>
+      <div class="value">0.40101575</div>
+    </div>
+    <div class="const-card">
+      <div class="label">κ₁ (Gear 1)</div>
+      <div class="value">1.99033906</div>
+    </div>
+    <div class="const-card">
+      <div class="label">α/17 (Correction)</div>
+      <div class="value">0.00042926</div>
+    </div>
+  </div>
+
+  <!-- Calculator grid -->
+  <div class="calc-grid">
+
+    <!-- Input -->
+    <div class="input-panel">
+      <h3>Input Values</h3>
+
+      <div class="field">
+        <label>Your Value (ratio or probability)</label>
+        <input type="number" id="userVal" placeholder="e.g. 0.6335" step="0.0001" min="0" max="100">
+      </div>
+
+      <div class="field">
+        <label>Analysis Mode</label>
+        <select id="mode">
+          <option value="ratio">Ratio / Probability [0–1]</option>
+          <option value="count">Count / Frequency</option>
+          <option value="physical">Physical Observable</option>
+          <option value="prime">Prime Number</option>
+        </select>
+      </div>
+
+      <div class="field" id="totalField" style="display:none">
+        <label>Total (for count mode)</label>
+        <input type="number" id="totalVal" placeholder="e.g. 1000" min="1">
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">▶ Analyse</button>
+    </div>
+
+    <!-- Results -->
+    <div class="results-panel" id="resultsPanel">
+      <h3>UST Analysis</h3>
+      <div id="resultsContent">
+        <div style="color:var(--muted); font-size:12px; line-height:1.8;">
+          Enter a value and press Analyse.<br><br>
+          The calculator will compare your input against all UST constants and identify the closest match with deviation percentage.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ONL Visualization -->
+  <div class="onl-viz">
+    <h3>ONL Three-Region Architecture</h3>
+    <div class="onl-bar" id="onlBar">
+      <div class="onl-segment seg-c"  id="seg_c"  style="width:23.25%">C</div>
+      <div class="onl-segment seg-om" id="seg_om" style="width:40.10%">Ω</div>
+      <div class="onl-segment seg-q"  id="seg_q"  style="width:36.65%">Q</div>
+    </div>
+    <div class="onl-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--accent)"></div>
+        Channel C · T_Om = 0.2325
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--gold)"></div>
+        0-Element · Ω_Om = 0.4010
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--accent3)"></div>
+        Channel Q · C_cb = 0.3665
+      </div>
+    </div>
+    <div id="onlNote" style="margin-top:14px; font-size:11px; color:var(--muted); line-height:1.7;">
+      The ONL partition sums exactly to 1.000000. Your value will be placed in the corresponding region.
+    </div>
+  </div>
+
+  <!-- Prime Test Section -->
+  <div class="prime-section">
+    <h3>UST Prime Filter · p mod 9 ∈ {2,5,8}</h3>
+    <div class="prime-input-row">
+      <input type="number" id="primeInput" placeholder="Enter any integer..." min="2" step="1">
+      <button class="btn-prime" onclick="testPrime()">Test</button>
+    </div>
+    <div class="prime-result" id="primeResult">
+      Enter an integer to test: Is it a twin prime candidate? What is its digital root? Which ONL group does it belong to?
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>
+      UST v5 · Patent TR 2026/003258 · PRD DR13888 ·
+      <a href="https://zenodo.org/records/19097335" target="_blank">Zenodo</a> ·
+      <a href="mailto:info@fromhomosapienstohomodata.com">info@fromhomosapienstohomodata.com</a>
+    </p>
+    <p style="margin-top:8px; opacity:0.5;">
+      fromhomosapienstohomodata.com · N. Öcal 2026
+    </p>
+  </div>
+
+</div>
+
+<script>
+// ── UST CONSTANTS ──────────────────────────────────────────────────
+const UST = {
+  Nb:     0.63354460,
+  Nm:     0.63353522,
+  Ccb:    0.36645540,
+  TOm:    0.23252885,
+  ONLOm:  0.40101575,
+  k1:     1.99033906,
+  k2:     3.98067812,
+  a17:    0.00042926,
+  T11:    1.83921016,
+  RA:     9.38e-6,
+};
+
+const LABELS = {
+  Nb:    'N_b (Blueprint)',
+  Nm:    'N_m (Manifest)',
+  Ccb:   'C_cb (Channel C)',
+  TOm:   'T_Om (Tunnel amplitude)',
+  ONLOm: 'Ω_Om (0-Element)',
+  k1:    'κ₁ (Harmonic Gear 1)',
+  k2:    'κ₂ (Harmonic Gear 2)',
+  a17:   'α/17 (QED correction)',
+  T11:   'T₁₁ (Ratio invariant)',
+  RA:    'R_A (Blueprint-Manifest gap)',
+};
+
+// Show/hide total field
+document.getElementById('mode').addEventListener('change', function() {
+  document.getElementById('totalField').style.display =
+    this.value === 'count' ? 'block' : 'none';
+});
+
+function digitalRoot(n) {
+  n = Math.abs(Math.floor(n));
+  if (n === 0) return 0;
+  return 1 + (n - 1) % 9;
+}
+
+function isPrime(n) {
+  if (n < 2) return false;
+  if (n === 2) return true;
+  if (n % 2 === 0) return false;
+  for (let i = 3; i <= Math.sqrt(n); i += 2)
+    if (n % i === 0) return false;
+  return true;
+}
+
+function getONLRegion(val) {
+  if (val <= UST.TOm) return { region: 'Channel C', color: 'var(--accent)', desc: 'Frozen / tunnel sector' };
+  if (val <= UST.Nb)  return { region: '0-Element', color: 'var(--gold)',   desc: 'Omnium boundary' };
+  return                     { region: 'Channel Q', color: 'var(--accent3)', desc: 'Active sector' };
+}
+
+function calculate() {
+  const raw = parseFloat(document.getElementById('userVal').value);
+  const mode = document.getElementById('mode').value;
+
+  if (isNaN(raw)) {
+    showResult('<span style="color:var(--accent2)">Please enter a valid number.</span>');
+    return;
+  }
+
+  let val = raw;
+
+  // Normalize for count mode
+  if (mode === 'count') {
+    const total = parseFloat(document.getElementById('totalVal').value);
+    if (!isNaN(total) && total > 0) val = raw / total;
+  }
+
+  // Find best UST match
+  let best = null, bestDelta = Infinity;
+  const comparisons = [];
+
+  for (const [key, ustVal] of Object.entries(UST)) {
+    const delta = Math.abs(val - ustVal) / Math.abs(ustVal) * 100;
+    comparisons.push({ key, ustVal, delta });
+    if (delta < bestDelta) { bestDelta = delta; best = { key, ustVal, delta }; }
+  }
+
+  comparisons.sort((a,b) => a.delta - b.delta);
+
+  // ONL region
+  const region = getONLRegion(Math.min(Math.max(val, 0), 1));
+
+  // Digital root
+  const drVal = digitalRoot(Math.round(Math.abs(raw)));
+
+  // Build HTML
+  let html = '';
+
+  // Best match
+  const matchClass = bestDelta < 1 ? 'ok' : bestDelta < 5 ? 'highlight' : 'warn';
+  html += `
+    <div class="result-row">
+      <span class="result-label">Your value</span>
+      <span class="result-value highlight">${val.toFixed(8)}</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Best UST match</span>
+      <span class="result-value ${matchClass}">${LABELS[best.key]}<br>${best.ustVal.toFixed(8)}</span>
+    </div>
+    <div class="result-row">
+      <span class="result-label">Deviation Δ%</span>
+      <span class="result-value ${matchClass}">${best.delta.toFixed(4)}%
+        ${best.delta < 1 ? ' ✓✓✓' : best.delta < 5 ? ' ✓✓' : best.delta < 10 ? ' ✓' : ''}</span>
+    </div>
+  `;
+
+  // ONL region (only for [0,1])
+  if (val >= 0 && val <= 1) {
+    html += `
+      <div class="result-row">
+        <span class="result-label">ONL Region</span>
+        <span class="result-value" style="color:${region.color}">${region.region}<br><small style="color:var(--muted)">${region.desc}</small></span>
+      </div>
+    `;
+    // Update bar indicator
+    updateONLBar(val, region);
+  }
+
+  // Digital root
+  html += `
+    <div class="result-row">
+      <span class="result-label">Digital Root (integer)</span>
+      <span class="result-value">${drVal}</span>
+    </div>
+  `;
+
+  // Top 3 matches
+  html += `<div style="margin-top:12px; font-size:10px; letter-spacing:1px; color:var(--muted); text-transform:uppercase; margin-bottom:6px;">Top 3 Matches</div>`;
+  for (const c of comparisons.slice(0,3)) {
+    const cls = c.delta < 1 ? 'ok' : c.delta < 5 ? 'highlight' : '';
+    html += `
+      <div class="result-row" style="font-size:11px;">
+        <span class="result-label">${LABELS[c.key]}</span>
+        <span class="result-value ${cls}">${c.delta.toFixed(4)}%</span>
+      </div>
+    `;
+  }
+
+  showResult(html);
+}
+
+function updateONLBar(val, region) {
+  const bar = document.getElementById('onlBar');
+  const segC  = document.getElementById('seg_c');
+  const segOm = document.getElementById('seg_om');
+  const segQ  = document.getElementById('seg_q');
+
+  // Reset borders
+  segC.style.outline = segOm.style.outline = segQ.style.outline = '';
+
+  if (val <= UST.TOm) {
+    segC.style.outline = '2px solid var(--accent)';
+    segC.style.outlineOffset = '-2px';
+  } else if (val <= UST.Nb) {
+    segOm.style.outline = '2px solid var(--gold)';
+    segOm.style.outlineOffset = '-2px';
+  } else {
+    segQ.style.outline = '2px solid var(--accent3)';
+    segQ.style.outlineOffset = '-2px';
+  }
+
+  document.getElementById('onlNote').innerHTML =
+    `Your value <strong style="color:${region.color}">${val.toFixed(6)}</strong>
+     falls in <strong style="color:${region.color}">${region.region}</strong>
+     (${region.desc}).`;
+}
+
+function showResult(html) {
+  const panel = document.getElementById('resultsPanel');
+  document.getElementById('resultsContent').innerHTML = html;
+  panel.style.animation = 'none';
+  panel.offsetHeight; // reflow
+  panel.style.animation = 'pulse 0.6s ease';
+}
+
+function testPrime() {
+  const n = parseInt(document.getElementById('primeInput').value);
+  if (isNaN(n) || n < 2) {
+    document.getElementById('primeResult').innerHTML =
+      '<span style="color:var(--accent2)">Please enter an integer ≥ 2.</span>';
+    return;
+  }
+
+  const dr = digitalRoot(n);
+  const mod9 = n % 9;
+  const prim = isPrime(n);
+  const twinCandidate = [2,5,8].includes(mod9);
+  const isTwin = prim && isPrime(n+2);
+  const isTwinLow = prim && n > 2 && isPrime(n-2);
+
+  // ONL group
+  let group = '—';
+  let groupColor = 'var(--muted)';
+  if (mod9 === 2) { group = '{2,4} · Channel C'; groupColor = 'var(--accent)'; }
+  if (mod9 === 5) { group = '{5,7} · 0-Element'; groupColor = 'var(--gold)'; }
+  if (mod9 === 8) { group = '{8,1} · Channel Q'; groupColor = 'var(--accent3)'; }
+
+  // Special: 17
+  const special17 = n === 17 ? ' 🔑 F₂ = 2^(2²)+1 · Channel Q initiator · DOF=17 in UST' : '';
+
+  let html = `
+    <span style="color:var(--text)"><strong>${n}</strong></span><br>
+    <span style="color:var(--muted)">Prime: </span>
+    <span style="color:${prim ? '#4ade80' : 'var(--accent2)'}">${prim ? '✓ YES' : '✗ NO'}</span><br>
+    <span style="color:var(--muted)">Digital Root: </span>
+    <span style="color:var(--accent)">${dr}</span><br>
+    <span style="color:var(--muted)">n mod 9: </span>
+    <span style="color:var(--text)">${mod9}</span><br>
+    <span style="color:var(--muted)">Twin prime candidate (mod 9 ∈ {2,5,8}): </span>
+    <span style="color:${twinCandidate ? '#4ade80' : 'var(--accent2)'}">${twinCandidate ? '✓ YES — passes UST filter' : '✗ NO — eliminated by UST sieve (67% efficiency)'}</span><br>
+  `;
+
+  if (prim) {
+    html += `
+    <span style="color:var(--muted)">Twin prime (p, p+2): </span>
+    <span style="color:${isTwin ? '#4ade80' : 'var(--muted)'}">${isTwin ? `✓ (${n}, ${n+2})` : '—'}</span><br>
+    <span style="color:var(--muted)">Twin prime (p-2, p): </span>
+    <span style="color:${isTwinLow ? '#4ade80' : 'var(--muted)'}">${isTwinLow ? `✓ (${n-2}, ${n})` : '—'}</span><br>
+    <span style="color:var(--muted)">ONL Group: </span>
+    <span style="color:${groupColor}">${group}</span><br>
+    `;
+  }
+
+  if (special17) {
+    html += `<span style="color:var(--gold)">${special17}</span>`;
+  }
+
+  document.getElementById('primeResult').innerHTML = html;
+}
+
+// Enter key support
+document.getElementById('userVal').addEventListener('keydown', e => { if(e.key==='Enter') calculate(); });
+document.getElementById('primeInput').addEventListener('keydown', e => { if(e.key==='Enter') testPrime(); });
+</script>
+</body>
+</html>

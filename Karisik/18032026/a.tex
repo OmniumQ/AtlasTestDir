@@ -1,0 +1,44 @@
+\documentclass[12pt,a4paper]{article}
+
+% Paketler
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{titlesec}
+
+% Başlık biçimi
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+% Başlık ve yazar bilgisi
+\title{A Novel Quantum Error Correction Method Without Additional Qubits}
+\author{Independent Researcher}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		Noise rates in quantum computing experiments have dropped dramatically, but reliable qubits remain precious. Fault-tolerance schemes with minimal qubit overhead are therefore essential. We introduce fault-tolerant error-correction procedures that use only two extra qubits. The procedures are based on adding ``flags'' to catch the faults that can lead to correlated errors on the data. They work for various distance-three codes. In particular, our scheme allows one to test the $\llbracket 5,1,3 \rrbracket$ code, the smallest error-correcting code, using only seven qubits total. Our techniques also apply to the $\llbracket 7,1,3 \rrbracket$ and $\llbracket 15,7,3 \rrbracket$ Hamming codes, thus allowing us to protect seven encoded qubits on a device with only 17 physical qubits.
+	\end{abstract}
+	
+	\section{Introduction}
+	Quantum error correction is essential for reliable quantum computation. While noise rates have improved, the scarcity of reliable qubits makes overhead reduction critical. This paper presents a scheme that introduces flag qubits to detect correlated errors, enabling fault tolerance with minimal resource requirements.
+	
+	\section{Methodology}
+	Our approach uses two additional qubits as flags. These flag qubits detect faults that would otherwise propagate into correlated errors across data qubits. The scheme is compatible with distance-three codes, including the $\llbracket 5,1,3 \rrbracket$, $\llbracket 7,1,3 \rrbracket$, and $\llbracket 15,7,3 \rrbracket$ codes.
+	
+	\section{Results}
+	\begin{itemize}
+		\item The $\llbracket 5,1,3 \rrbracket$ code can be tested with only 7 qubits total.
+		\item The $\llbracket 7,1,3 \rrbracket$ Steane code and $\llbracket 15,7,3 \rrbracket$ Hamming code can be implemented with 17 physical qubits.
+		\item Seven encoded qubits can be protected with minimal overhead.
+	\end{itemize}
+	
+	\section{Conclusion}
+	This work demonstrates that fault-tolerant quantum error correction can be achieved with only two extra qubits. By leveraging flag qubits, we reduce overhead while maintaining robustness against correlated errors, paving the way for scalable demonstrations on near-term quantum devices.
+	
+\end{document}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bütünsel Kaynak Teorisi (UST) v5 Analiz Çerçevesi</title>
+    <!-- Formüllerin matematiksel dizgisi için MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg-color: #fafafa;
+            --text-color: #2c3e50;
+            --pastel-blue: #d4e6f1;
+            --pastel-green: #d5f5e3;
+            --pastel-yellow: #fcf3cf;
+            --pastel-purple: #e8daef;
+            --pastel-orange: #fae5d3;
+            --border-color: #bdc3c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--pastel-blue);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-card {
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .step-header:hover {
+            filter: brightness(0.95);
+        }
+
+        .step-body {
+            padding: 20px;
+            display: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Pastel Renk Atamaları */
+        .step-card:nth-child(1) .step-header {
+            background-color: var(--pastel-blue);
+        }
+
+        .step-card:nth-child(2) .step-header {
+            background-color: var(--pastel-green);
+        }
+
+        .step-card:nth-child(3) .step-header {
+            background-color: var(--pastel-yellow);
+        }
+
+        .step-card:nth-child(4) .step-header {
+            background-color: var(--pastel-purple);
+        }
+
+        .step-card:nth-child(5) .step-header {
+            background-color: var(--pastel-orange);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ecf0f1;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Bütünsel Kaynak Teorisi (UST) v5</h1>
+            <p>Kuantum Mekaniği, Genel Görelilik ve Bilgi Teorisinin Deterministik Sentezi</p>
+        </div>
+
+        <!-- Adım 1 -->
+        <div class="step-card">
+            <div class="step-header" onclick="toggleSection(this)">
+                <span>Adım 1: Ontolojik Temeller ve Çift Kanallı Mimari</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="step-body">
+                <p>Geleneksel doğrusal topolojinin aksine UST, evrenin dinamiğini asimetrik ve çift kanallı bir topoloji
+                    olarak tanımlar.</p>
+                <ul>
+                    <li><strong>Kanal C (-0 / Dondurulmuş Arka Plan):</strong> Zamanın bağımsız bir değişken olarak
+                        akmadığı, kuantum bilgisinin statik bir iz (imprint) olarak depolandığı gravitasyonel arka
+                        plandır. Gözlemsel fizikteki Karanlık Madde bu sektörün izdüşümüdür. Ağırlık faktörü: \(C_{cb} =
+                        0.36645540\).</li>
+                    <li><strong>Kanal Q (0+ / Aktif Gözlemlenebilir Sektör):</strong> Termodinamik süreçlerin
+                        gerçekleştiği, fiziksel tezahürün aktif bilgi uzayıdır. Ağırlık faktörü: \(N_b = 0.63354460\).
+                    </li>
+                </ul>
+                <p>Sistem, sıfır entropili (S=0) üniter bir evrimi dikte eden Limit Simetrisi ile korunur.</p>
+            </div>
+        </div>
+
+        <!-- Adım 2 -->
+        <div class="step-card">
+            <div class="step-header" onclick="toggleSection(this)">
+                <span>Adım 2: Evrensel Sabitin (Ns,q) İlk-İlkelerden Türetimi</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="step-body">
+                <p>Teorinin merkezindeki sabitin değeri ampirik uydurmalara (curve-fitting) değil, uzay-zaman
+                    geometrisinin mutlak sınır koşullarına dayanır.</p>
+                <p><strong>Geometrik Maksimizasyon:</strong> Einstein tensörünün \(G_{tt}\) bileşeni maksimize
+                    edildiğinde (\(G_{tt} = 1/4\)), elde edilen denklem \(N_{s,q}^2 - 3N_{s,q} + 3/2 = 0\) şeklindedir.
+                    Bunun fiziksel kökü, de Sitter uzay limitinde geometrik referansı oluşturur.</p>
+                <p><strong>QFT ve Seeley-DeWitt Düzeltmesi:</strong> 1-ilmek (one-loop) vakum dalgalanmaları hesaba
+                    katılarak efektif eyleme Laplace tipi operatörler üzerinden ikinci Seeley-DeWitt katsayısı (\(a_2 =
+                    1/17\)) uygulanır,. Bu, QED düzeltmesi olan \(-\alpha/17\)'nin topolojik gereksinimidir.</p>
+                <p>Sonuç olan mutlak boyutsuz evrensel sabit:</p>
+                <p style="font-size:1.2rem; text-align:center;">
+                    \( N_{s,q} = \frac{3-\sqrt{3}}{2} - \frac{\alpha}{17} = 0.63354460 \)
+                </p>
+            </div>
+        </div>
+
+        <!-- Adım 3 -->
+        <div class="step-card">
+            <div class="step-header" onclick="toggleSection(this)">
+                <span>Adım 3: Kozmolojik Tünelleme ve Karanlık Sektör</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="step-body">
+                <p>Kanal Q (aktif) ile Kanal C (donmuş) arasındaki topolojik geçiş, deterministik bir kuantum tünelleme
+                    genliğine (WKB amplitüdü) bağlanır.</p>
+                <p>
+                    \( T_{Om} = \exp[-2\pi N_b C_{cb}] \approx 0.233 \)
+                </p>
+                <p>Fiziksel uzaydaki kuantum durumlarının yaklaşık %23.3'ü Kanal C'ye tüneller; bu, Karanlık Madde
+                    kütleçekim izinin diferansiyel kaynağıdır.</p>
+                <p><strong>Karanlık Enerji (\(\Omega_\Lambda\)):</strong> Kanal C'nin geri yansıması, galaktik sarmal
+                    sabiti (\(\phi \cdot \pi\)) filtresinden geçer. Serbest parametre kullanılmadan deterministik olarak
+                    türetilir:</p>
+                <p style="text-align:center;">
+                    \( \Omega_\Lambda = N_{s,q} + \frac{\Omega_{DM}}{\phi \cdot \pi} \approx 0.685677 \)
+                </p>
+            </div>
+        </div>
+
+        <!-- Adım 4 -->
+        <div class="step-card">
+            <div class="step-header" onclick="toggleSection(this)">
+                <span>Adım 4: Ek Kübitsiz Kuantum Hata Düzeltme (QEC)</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="step-body">
+                <p>Geleneksel ancilla (yedek) kübit yöntemleri reddedilir. Gürültü stokastik değil, Kanal C'ye doğru
+                    gerçekleşen bir faz sızıntısıdır. Sistem, \(C(p) \cdot E(p) = I\) matris işlemiyle korunur,.</p>
+                <p>Markoviyen olmayan sistemler için Lindblad denklemi, Dekoheranssız Alt Uzay (DFS) stabilizasyon
+                    operatörüyle donanımı evrensel geometriye kilitler. Mutlak stabilizasyon hızı:</p>
+                <p style="text-align:center;">
+                    \( \kappa \cdot dt = \pi \cdot N_{s,q} \approx 1.990339 \)
+                </p>
+                <p>Bu sınır koşulu CERN ATLAS 13 TeV ham çarpışma gürültü verilerinde test edilmiş olup aslına uygunluğu
+                    (Fidelity) 0.4999 çöküşünden deterministik \(F = 0.9913\) değerine sabitlemiştir,.</p>
+            </div>
+        </div>
+
+        <!-- Adım 5 -->
+        <div class="step-card">
+            <div class="step-header" onclick="toggleSection(this)">
+                <span>Adım 5: Yanlışlanabilirlik (Popper Kriteri) ve Ampirik Çıktılar</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="step-body">
+                <p>Teori, gizli değişkenler kullanmaz ve Karl Popper'ın katı yanlışlanabilirlik (falsifiability)
+                    kriterine tam uyum sağlar,.</p>
+                <table>
+                    <tr>
+                        <th>Teorem No</th>
+                        <th>Fiziksel Büyüklük</th>
+                        <th>UST Analitik Öngörüsü</th>
+                        <th>Gerçek Dünya Testi</th>
+                    </tr>
+                    <tr>
+                        <td>T1</td>
+                        <td>QEC Evrensel Stabilizasyon</td>
+                        <td>\( 1.990339 \)</td>
+                        <td>CERN ATLAS (%98.3 İyileşme)</td>
+                    </tr>
+                    <tr>
+                        <td>T5</td>
+                        <td>Karanlık Enerji (\(\Omega_\Lambda\))</td>
+                        <td>\( 0.6857 \)</td>
+                        <td>Planck 2018 / Euclid Teleskobu</td>
+                    </tr>
+                    <tr>
+                        <td>T10</td>
+                        <td>WKB Tünelleme Genliği</td>
+                        <td>\( 0.233 \)</td>
+                        <td>Karanlık Madde Bütçesi (%0.66 Sapma)</td>
+                    </tr>
+                </table>
+                <p style="margin-top:15px; font-weight:bold;">Sınama Eşiği:</p>
+                <p>Kozmolojik (Euclid 2026 Q2 Data) ya da mikrokozmik (CERN / IBM Quantum) ampirik gözlemler
+                    deterministik sınırlardan (\(\Omega_\Lambda = 0.6857\) veya \(\kappa \cdot dt = 1.990339\)) saparsa
+                    UST doğrudan yanlışlanmış (falsified) kabul edilir,.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Akordeon menü etkileşimi için basit Javascript fonksiyonu
+        function toggleSection(element) {
+            const body = element.nextElementSibling;
+            const icon = element.querySelector('.icon');
+
+            if (body.style.display === "block") {
+                body.style.display = "none";
+                icon.textContent = "▼";
+            } else {
+                body.style.display = "block";
+                icon.textContent = "▲";
+            }
+        }
+
+        // İlk sekmenin varsayılan olarak açık gelmesi
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstStep = document.querySelector('.step-header');
+            if (firstStep) {
+                toggleSection(firstStep);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

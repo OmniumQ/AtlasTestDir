@@ -1,0 +1,668 @@
+
+
+
+
+=======================================================================================
+ Icestudio session Wed Mar 25 2026 15:31:48 GMT+0300 (GMT+03:00)
+ Version: 0.12
+=======================================================================================
+Node information:
+  * Node version: v21.1.0
+  * lts: undefined
+  * SourceURL: https://nodejs.org/download/release/v21.1.0/node-v21.1.0.tar.gz
+
+NW information: 
+  * NW version: 0.83.0
+  * NW-flavor: sdk
+  * Chromium: 120.0.6099.129
+
+System information:
+  * Architecture: x64
+  * Platform: win32
+
+Profile file: C:\Users\info\.icestudio\profile.json
+
+- PROFILE:
+
+{
+  "data": {
+    "board": "",
+    "boardRules": true,
+    "allowInoutPorts": false,
+    "collection": "",
+    "language": "en",
+    "uiTheme": "dark",
+    "externalCollections": "",
+    "externalPlugins": "",
+    "remoteHostname": "",
+    "showFPGAResources": false,
+    "displayVersionInfoWindow": "yes",
+    "lastVersionReview": false,
+    "loggingEnabled": false,
+    "loggingFile": "",
+    "pythonEnv": {
+      "python": "",
+      "pip": ""
+    }
+  }
+}
+
+- PATHs
+
+common.BASE_DIR: Icestudio base dir: C:\Users\info
+common.ICESTUDIO_DIR: Icestudio folder: C:\Users\info\.icestudio
+common.PROFILE_PATH: Profile path: C:\Users\info\.icestudio\profile.json
+common.INTERNAL_COLLECTIONS_DIR: Internal collections: C:\Users\info\.icestudio\collections
+common.APIO_HOME_DIR: APIO folder: C:\Users\info\.icestudio\apio
+common.ENV_DIR: Python virtual environment: C:\Users\info\.icestudio\venv
+common.ENV_BIN_DIR: Executable files: C:\Users\info\.icestudio\venv\Scripts
+common.ENV_PIP: PIP executable:  C:\Users\info\.icestudio\venv\Scripts\pip3
+common.APIO_CMD: APIO command: set APIO_HOME_DIR="C:\Users\info\.icestudio\apio"& set PATH=C:\Users\info\.icestudio\venv\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MATLAB\R2025b\runtime\win64;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\info\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\info\AppData\Local\Programs\Python\Python312\;C:\Users\info\AppData\Local\Programs\Python\Launcher\;C:\Users\info\.local\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Users\info\AppData\Local\Microsoft\WindowsApps;C:\Users\info\.dotnet\tools;C:\MiKTeX\miktex\bin\x64\;C:\Users\info\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera_pro\25.3.1\questa_fe\win64;C:\altera_pro\25.3.1\questa_fse\win64& "C:\Users\info\.icestudio\venv\Scripts\apio.exe"
+Common.APP: Icestudio APP folder: C:\Program Files\icestudio\package.nw
+common.APP_DIR: Icestudio execution folder: C:\Program Files\icestudio
+
+
+
+===> tools.CHECKTOOLCHAIN
+>>>> utils.executeCommand => set APIO_HOME_DIR="C:\Users\info\.icestudio\apio"& set PATH=C:\Users\info\.icestudio\venv\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MATLAB\R2025b\runtime\win64;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\info\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\info\AppData\Local\Programs\Python\Python312\;C:\Users\info\AppData\Local\Programs\Python\Launcher\;C:\Users\info\.local\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Users\info\AppData\Local\Microsoft\WindowsApps;C:\Users\info\.dotnet\tools;C:\MiKTeX\miktex\bin\x64\;C:\Users\info\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera_pro\25.3.1\questa_fe\win64;C:\altera_pro\25.3.1\questa_fse\win64& "C:\Users\info\.icestudio\venv\Scripts\apio.exe" --version
+
+>>(ERROR): The system cannot find the path specified.
+
+
+----!!!! ERROR !!!! -----
+CMD: set APIO_HOME_DIR="C:\Users\info\.icestudio\apio"& set PATH=C:\Users\info\.icestudio\venv\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MATLAB\R2025b\runtime\win64;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\info\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\info\AppData\Local\Programs\Python\Python312\;C:\Users\info\AppData\Local\Programs\Python\Launcher\;C:\Users\info\.local\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Users\info\AppData\Local\Microsoft\WindowsApps;C:\Users\info\.dotnet\tools;C:\MiKTeX\miktex\bin\x64\;C:\Users\info\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera_pro\25.3.1\questa_fe\win64;C:\altera_pro\25.3.1\questa_fse\win64& "C:\Users\info\.icestudio\venv\Scripts\apio.exe",--version
+  Error flag: true
+  Error: true
+------> MENU ENTRY POINT: Install Toolchain
+**** STEP: Check internet connection
+**** STEP: Check Python
+**** STEP: Create virtualenv
+>>>> utils.executeCommand => py.exe -3 -m venv "C:\Users\info\.icestudio\venv"
+
+**** STEP: Install APIO
+>>>> utils.executeCommand => "C:\Users\info\.icestudio\venv\Scripts\pip3" install -U apio[blackiceprog,tinyfpgab,tinyprog,icefunprog]==0.9.5
+
+>>(OUTPUT): Collecting apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5
+
+
+>>(OUTPUT):   Obtaining dependency information for apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5 from https://files.pythonhosted.org/packages/4e/7a/f5b6eff84aa8a3f7e09d470143a37d05033ab2139cd7ca6bea6408c8fe9a/apio-0.9.5-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading apio-0.9.5-py3-none-any.whl.metadata (5.9 kB)
+
+
+>>(OUTPUT): Collecting click==8.1.3 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for click==8.1.3 from https://files.pythonhosted.org/packages/c2/f1/df59e28c642d583f7dacffb1e0965d0e00b218e0186d7858ac5233dce840/click-8.1.3-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading click-8.1.3-py3-none-any.whl.metadata (3.2 kB)
+
+
+>>(OUTPUT): Collecting semantic_version==2.9.0 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for semantic_version==2.9.0 from https://files.pythonhosted.org/packages/64/ac/df31047966c4d0293e7bd16276ebc9f6654de36ad8e19061a09369380c0a/semantic_version-2.9.0-py2.py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading semantic_version-2.9.0-py2.py3-none-any.whl.metadata (9.7 kB)
+
+
+>>(OUTPUT): Collecting requests==2.28.2 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for requests==2.28.2 from https://files.pythonhosted.org/packages/d2/f4/274d1dbe96b41cf4e0efb70cbced278ffd61b5c7bb70338b62af94ccb25b/requests-2.28.2-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading requests-2.28.2-py3-none-any.whl.metadata (4.6 kB)
+
+
+>>(OUTPUT): Collecting colorama==0.4.6 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for colorama==0.4.6 from https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+
+
+>>(OUTPUT): Collecting pyserial==3.5 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for pyserial==3.5 from https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading pyserial-3.5-py2.py3-none-any.whl.metadata (1.6 kB)
+
+
+>>(OUTPUT): Collecting wheel<1,>=0.35.0 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for wheel<1,>=0.35.0 from https://files.pythonhosted.org/packages/87/22/b76d483683216dde3d67cba61fb2444be8d5be289bf628c13fc0fd90e5f9/wheel-0.46.3-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading wheel-0.46.3-py3-none-any.whl.metadata (2.4 kB)
+
+
+>>(OUTPUT): Collecting scons==4.2.0 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for scons==4.2.0 from https://files.pythonhosted.org/packages/d8/29/401703b6ce7ad8b4009ab16a435a7c08827357e1c7217ad39e750e75a358/SCons-4.2.0-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading SCons-4.2.0-py3-none-any.whl.metadata (5.4 kB)
+
+
+>>(OUTPUT): Collecting packaging>=23.2 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for packaging>=23.2 from https://files.pythonhosted.org/packages/b7/b9/c538f279a4e237a006a2c98387d081e9eb060d203d8ed34467cc0f0b9b53/packaging-26.0-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+
+
+>>(OUTPUT): Collecting blackiceprog==2.0.0 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Downloading blackiceprog-2.0.0.tar.gz (1.8 kB)
+
+
+>>(OUTPUT):   Installing build dependencies: started
+
+
+>>(OUTPUT):   Installing build dependencies: finished with status 'done'
+
+
+>>(OUTPUT):   Getting requirements to build wheel: started
+
+
+>>(OUTPUT):   Getting requirements to build wheel: finished with status 'done'
+
+
+>>(OUTPUT):   Preparing metadata (pyproject.toml): started
+
+
+>>(OUTPUT):   Preparing metadata (pyproject.toml): finished with status 'done'
+
+
+>>(OUTPUT): Collecting icefunprog==2.0.3 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Downloading icefunprog-2.0.3.tar.gz (2.9 kB)
+
+
+>>(OUTPUT):   Installing build dependencies: started
+
+
+>>(OUTPUT):   Installing build dependencies: finished with status 'done'
+
+
+>>(OUTPUT):   Getting requirements to build wheel: started
+
+
+>>(OUTPUT):   Getting requirements to build wheel: finished with status 'done'
+
+
+>>(OUTPUT):   Preparing metadata (pyproject.toml): started
+
+
+>>(OUTPUT):   Preparing metadata (pyproject.toml): finished with status 'done'
+
+
+>>(OUTPUT): Collecting tinyfpgab==1.1.0 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT):   Downloading tinyfpgab-1.1.0.tar.gz (4.6 kB)
+
+
+>>(OUTPUT):   Installing build dependencies: started
+
+
+>>(OUTPUT):   Installing build dependencies: finished with status 'done'
+
+
+>>(OUTPUT):   Getting requirements to build wheel: started
+
+
+>>(OUTPUT):   Getting requirements to build wheel: finished with status 'done'
+
+
+>>(OUTPUT):   Preparing metadata (pyproject.toml): started
+
+
+>>(OUTPUT):   Preparing metadata (pyproject.toml): finished with status 'done'
+
+
+>>(OUTPUT): Collecting tinyprog==1.0.21 (from apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for tinyprog==1.0.21 from https://files.pythonhosted.org/packages/2e/10/cfcd7e90514657d2419c842c2aaaa3a96d3d3e90d2e25a6c6ea273a21c87/tinyprog-1.0.21-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading tinyprog-1.0.21-py3-none-any.whl.metadata (854 bytes)
+
+
+>>(OUTPUT): Collecting charset-normalizer<4,>=2 (from requests==2.28.2->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for charset-normalizer<4,>=2 from https://files.pythonhosted.org/packages/ab/20/0567efb3a8fd481b8f34f739ebddc098ed062a59fed41a8d193a61939e8f/charset_normalizer-3.4.6-cp312-cp312-win_amd64.whl.metadata
+
+
+>>(OUTPUT):   Downloading charset_normalizer-3.4.6-cp312-cp312-win_amd64.whl.metadata (41 kB)
+
+
+>>(OUTPUT):      
+
+>>(OUTPUT): -------------------------------------- 41.4/41.4 kB 662.0 kB/s eta 0:00:00
+
+
+>>(OUTPUT): Collecting idna<4,>=2.5 (from requests==2.28.2->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for idna<4,>=2.5 from https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+
+
+>>(OUTPUT): Collecting urllib3<1.27,>=1.21.1 (from requests==2.28.2->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for urllib3<1.27,>=1.21.1 from https://files.pythonhosted.org/packages/33/cf/8435d5a7159e2a9c83a95896ed596f68cf798005fe107cc655b5c5c14704/urllib3-1.26.20-py2.py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading urllib3-1.26.20-py2.py3-none-any.whl.metadata (50 kB)
+
+
+>>(OUTPUT):      ---------------------------------------- 50.1/50.1 kB 2.5 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Collecting certifi>=2017.4.17 (from requests==2.28.2->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for certifi>=2017.4.17 from https://files.pythonhosted.org/packages/9a/3c/c17fb3ca2d9c3acff52e30b309f538586f9f5b9c9cf454f3845fc9af4881/certifi-2026.2.25-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+
+
+>>(OUTPUT): Collecting setuptools (from scons==4.2.0->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for setuptools from https://files.pythonhosted.org/packages/9d/76/f789f7a86709c6b087c5a2f52f911838cad707cc613162401badc665acfe/setuptools-82.0.1-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Using cached setuptools-82.0.1-py3-none-any.whl.metadata (6.5 kB)
+
+
+>>(OUTPUT): Collecting intelhex<3,>=2.2.1 (from tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for intelhex<3,>=2.2.1 from https://files.pythonhosted.org/packages/97/78/79461288da2b13ed0a13deb65c4ad1428acb674b95278fa9abf1cefe62a2/intelhex-2.3.0-py2.py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading intelhex-2.3.0-py2.py3-none-any.whl.metadata (2.7 kB)
+
+
+>>(OUTPUT): Collecting jsonmerge<2,>=1.4.0 (from tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for jsonmerge<2,>=1.4.0 from https://files.pythonhosted.org/packages/71/c2/1032d0dbc2152c45f3d1e582a72e68f41898de9665202392d9400dfa329d/jsonmerge-1.9.2-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading jsonmerge-1.9.2-py3-none-any.whl.metadata (21 kB)
+
+
+>>(OUTPUT): Collecting pyusb (from tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+  Obtaining dependency information for pyusb from https://files.pythonhosted.org/packages/28/b8/27e6312e86408a44fe16bd28ee12dd98608b39f7e7e57884a24e8f29b573/pyusb-1.3.1-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading pyusb-1.3.1-py3-none-any.whl.metadata (2.5 kB)
+
+
+>>(OUTPUT): Collecting six (from tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for six from https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+
+
+>>(OUTPUT): Collecting tqdm<5,>=4.19.5 (from tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for tqdm<5,>=4.19.5 from https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading tqdm-4.67.3-py3-none-any.whl.metadata (57 kB)
+
+
+>>(OUTPUT):      ---------------------------------------- 57.7/57.7 kB 3.2 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Collecting jsonschema>2.4.0 (from jsonmerge<2,>=1.4.0->tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for jsonschema>2.4.0 from https://files.pythonhosted.org/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+
+
+>>(OUTPUT): Collecting attrs>=22.2.0 (from jsonschema>2.4.0->jsonmerge<2,>=1.4.0->tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for attrs>=22.2.0 from https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+
+
+>>(OUTPUT): Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>2.4.0->jsonmerge<2,>=1.4.0->tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for jsonschema-specifications>=2023.03.6 from https://files.pythonhosted.org/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+
+
+>>(OUTPUT): Collecting referencing>=0.28.4 (from jsonschema>2.4.0->jsonmerge<2,>=1.4.0->tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for referencing>=0.28.4 from https://files.pythonhosted.org/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+
+
+>>(OUTPUT): Collecting rpds-py>=0.25.0 (from jsonschema>2.4.0->jsonmerge<2,>=1.4.0->tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for rpds-py>=0.25.0 from https://files.pythonhosted.org/packages/39/3b/f786af9957306fdc38a74cef405b7b93180f481fb48453a114bb6465744a/rpds_py-0.30.0-cp312-cp312-win_amd64.whl.metadata
+
+
+>>(OUTPUT):   Downloading rpds_py-0.30.0-cp312-cp312-win_amd64.whl.metadata (4.2 kB)
+
+
+>>(OUTPUT): Collecting typing-extensions>=4.4.0 (from referencing>=0.28.4->jsonschema>2.4.0->jsonmerge<2,>=1.4.0->tinyprog==1.0.21->apio[blackiceprog,icefunprog,tinyfpgab,tinyprog]==0.9.5)
+
+
+>>(OUTPUT):   Obtaining dependency information for typing-extensions>=4.4.0 from https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl.metadata
+
+
+>>(OUTPUT):   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+
+
+>>(OUTPUT): Downloading click-8.1.3-py3-none-any.whl (96 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 
+
+>>(OUTPUT): 96.6/96.6 kB 2.8 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+
+
+>>(OUTPUT): Downloading pyserial-3.5-py2.py3-none-any.whl (90 kB)
+
+
+>>(OUTPUT):   
+
+>>(OUTPUT):  ---------------------------------------- 90.6/90.6 kB 5.4 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading requests-2.28.2-py3-none-any.whl (62 kB)
+
+
+>>(OUTPUT):   
+
+>>(OUTPUT):  ---------------------------------------- 62.8/62.8 kB 3.5 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading SCons-4.2.0-py3-none-any.whl (4.2 MB)
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT):    
+
+>>(OUTPUT): ---------------------------------------- 4.2/4.2 MB 2.8 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading semantic_version-2.9.0-py2.py3-none-any.whl (15 kB)
+
+
+>>(OUTPUT): Downloading tinyprog-1.0.21-py3-none-any.whl (10 kB)
+
+
+>>(OUTPUT): Using cached packaging-26.0-py3-none-any.whl (74 kB)
+
+
+>>(OUTPUT): Using cached wheel-0.46.3-py3-none-any.whl (30 kB)
+
+
+>>(OUTPUT): Downloading apio-0.9.5-py3-none-any.whl (91 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 91.5/91.5 kB 2.6 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 153.7/153.7 kB 2.3 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Downloading charset_normalizer-3.4.6-cp312-cp312-win_amd64.whl (154 kB)
+
+
+>>(OUTPUT):    
+
+>>(OUTPUT): ---------------------------------------- 154.3/154.3 kB 3.1 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading idna-3.11-py3-none-any.whl (71 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 71.0/71.0 kB 1.9 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Downloading intelhex-2.3.0-py2.py3-none-any.whl (50 kB)
+
+
+>>(OUTPUT):    
+
+>>(OUTPUT): ---------------------------------------- 50.9/50.9 kB 2.5 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading jsonmerge-1.9.2-py3-none-any.whl (19 kB)
+
+
+>>(OUTPUT): Downloading tqdm-4.67.3-py3-none-any.whl (78 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 78.4/78.4 kB 2.2 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Downloading urllib3-1.26.20-py2.py3-none-any.whl (144 kB)
+
+
+>>(OUTPUT):    
+
+>>(OUTPUT): ---------------------------------------- 144.2/144.2 kB 2.9 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading pyusb-1.3.1-py3-none-any.whl (58 kB)
+
+
+>>(OUTPUT):   
+
+>>(OUTPUT):  ---------------------------------------- 58.5/58.5 kB 3.0 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Using cached setuptools-82.0.1-py3-none-any.whl (1.0 MB)
+
+
+>>(OUTPUT): Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+
+
+>>(OUTPUT): Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 90.6/90.6 kB 2.5 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+
+
+>>(OUTPUT):    ---------------------------------------- 67.5/67.5 kB 1.8 MB/s eta 0:00:00
+
+>>(OUTPUT): 
+
+
+>>(OUTPUT): Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+
+
+>>(OUTPUT): Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+
+
+>>(OUTPUT): Downloading rpds_py-0.30.0-cp312-cp312-win_amd64.whl (240 kB)
+
+
+>>(OUTPUT):    
+
+>>(OUTPUT): ---------------------------------------- 240.5/240.5 kB 3.0 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+
+
+>>(OUTPUT):    ----------------------------------------
+
+>>(OUTPUT):  44.6/44.6 kB 2.1 MB/s eta 0:00:00
+
+
+>>(OUTPUT): Building wheels for collected packages: blackiceprog, icefunprog, tinyfpgab
+
+
+>>(OUTPUT):   Building wheel for blackiceprog (pyproject.toml): started
+
+
+>>(OUTPUT):   Building wheel for blackiceprog (pyproject.toml): finished with status 'done'
+
+
+>>(OUTPUT):   Created wheel for blackiceprog: filename=blackiceprog-2.0.0-py3-none-any.whl size=2324 sha256=7ec34e11a83d89db425cfb8caedd643e4e00c804dac18d6841f0c38697c140fe
+  Stored in directory: c:\users\info\appdata\local\pip\cache\wheels\32\2e\20\bed7803fe122e2f280708f0b1972b4554bd5fe580758029627
+
+
+>>(OUTPUT):   Building wheel for icefunprog (pyproject.toml): started
+
+
+>>(OUTPUT):   Building wheel for icefunprog (pyproject.toml): finished with status 'done'
+
+
+>>(OUTPUT):   Created wheel for icefunprog: filename=icefunprog-2.0.3-py3-none-any.whl size=3102 sha256=31dea3f9224f3980d5da21e772f446da7575d380e6922ca754795548d239afb5
+
+
+>>(OUTPUT):   Stored in directory: c:\users\info\appdata\local\pip\cache\wheels\f2\28\7d\54c83cc7589f3e636ae5eda945a0e87193511e811ae664dea7
+
+
+>>(OUTPUT):   Building wheel for tinyfpgab (pyproject.toml): started
+
+
+>>(OUTPUT):   Building wheel for tinyfpgab (pyproject.toml): finished with status 'done'
+
+
+>>(OUTPUT):   Created wheel for tinyfpgab: filename=tinyfpgab-1.1.0-py3-none-any.whl size=5469 sha256=47da9837c9599826ad1c9d56ba18bfc0e9d13c255944cf801b95b911a31e8ce9
+
+
+>>(OUTPUT):   Stored in directory: c:\users\info\appdata\local\pip\cache\wheels\f1\5b\a3\ca256be2f78adff937ebdfdf7c2cb17a304608da6530196d61
+
+
+>>(OUTPUT): Successfully built blackiceprog icefunprog tinyfpgab
+
+
+>>(OUTPUT): Installing collected packages: pyserial, intelhex, urllib3, typing-extensions, tinyfpgab, six, setuptools, semantic_version, rpds-py, pyusb, packaging, idna, icefunprog, colorama, charset-normalizer, certifi, blackiceprog, attrs, wheel, tqdm, scons, requests, referencing, click, jsonschema-specifications, apio, jsonschema, jsonmerge, tinyprog
+
+
+>>(OUTPUT): Successfully installed apio-0.9.5 attrs-26.1.0 blackiceprog-2.0.0 certifi-2026.2.25 charset-normalizer-3.4.6 click-8.1.3 colorama-0.4.6 icefunprog-2.0.3 idna-3.11 intelhex-2.3.0 jsonmerge-1.9.2 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 packaging-26.0 pyserial-3.5 pyusb-1.3.1 referencing-0.37.0 requests-2.28.2 rpds-py-0.30.0 scons-4.2.0 semantic_version-2.9.0 setuptools-82.0.1 six-1.17.0 tinyfpgab-1.1.0 tinyprog-1.0.21 tqdm-4.67.3 typing-extensions-4.15.0 urllib3-1.26.20 wheel-0.46.3
+
+
+>>(ERROR): 
+[notice] A new release of pip is available: 23.2.1 -> 26.0.1
+[notice] To update, run: C:\Users\info\.icestudio\venv\Scripts\python.exe -m pip install --upgrade pip
+
+
+**** STEP: Repair OS Permissions
+**** STEP: APIO install oss-cad-suite
+>>>> utils.executeCommand => set APIO_HOME_DIR="C:\Users\info\.icestudio\apio"& set PATH=C:\Users\info\.icestudio\venv\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MATLAB\R2025b\runtime\win64;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\info\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\info\AppData\Local\Programs\Python\Python312\;C:\Users\info\AppData\Local\Programs\Python\Launcher\;C:\Users\info\.local\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Users\info\AppData\Local\Microsoft\WindowsApps;C:\Users\info\.dotnet\tools;C:\MiKTeX\miktex\bin\x64\;C:\Users\info\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera_pro\25.3.1\questa_fe\win64;C:\altera_pro\25.3.1\questa_fse\win64& "C:\Users\info\.icestudio\venv\Scripts\apio.exe" install oss-cad-suite@0.0.9
+
+>>(OUTPUT): Installing oss-cad-suite package:
+
+
+>>(OUTPUT): Download tools-oss-cad-suite-windows_amd64-0.0.9.tar.gz
+
+
+>>(OUTPUT): Downloading
+
+
+>>(OUTPUT): Unpacking..
+
+
+>>(OUTPUT): Package 'oss-cad-suite' has been successfully installed!
+
+
+**** STEP: Repair OS Permissions
+**** STEP: APIO install drivers
+>>>> utils.executeCommand => set APIO_HOME_DIR="C:\Users\info\.icestudio\apio"& set PATH=C:\Users\info\.icestudio\venv\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MATLAB\R2025b\runtime\win64;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\info\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\info\AppData\Local\Programs\Python\Python312\;C:\Users\info\AppData\Local\Programs\Python\Launcher\;C:\Users\info\.local\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Users\info\AppData\Local\Microsoft\WindowsApps;C:\Users\info\.dotnet\tools;C:\MiKTeX\miktex\bin\x64\;C:\Users\info\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera_pro\25.3.1\questa_fe\win64;C:\altera_pro\25.3.1\questa_fse\win64& "C:\Users\info\.icestudio\venv\Scripts\apio.exe" install drivers
+
+>>(OUTPUT): File version.txt downloaded!
+Version: 1.3.0
+Installing drivers package:
+
+
+>>(OUTPUT): Download tools-drivers-windows_amd64-1.3.0.tar.gz
+
+
+>>(OUTPUT): Downloading
+
+
+>>(OUTPUT): Unpacking..
+
+
+>>(OUTPUT): Package 'drivers' has been successfully installed!
+
+
+**** STEP: Repair OS Permissions
+**** FINAL STEP: Checking the installed APIO
+===> tools.CHECKTOOLCHAIN
+>>>> utils.executeCommand => set APIO_HOME_DIR="C:\Users\info\.icestudio\apio"& set PATH=C:\Users\info\.icestudio\venv\Scripts;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\MATLAB\R2025b\runtime\win64;C:\Program Files\MATLAB\R2025b\bin;C:\Program Files\Wolfram Research\WolframScript\;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\info\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\info\AppData\Local\Programs\Python\Python312\;C:\Users\info\AppData\Local\Programs\Python\Launcher\;C:\Users\info\.local\bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;C:\Program Files (x86)\Microsoft Visual Studio\VC98\bin;C:\Users\info\AppData\Local\Microsoft\WindowsApps;C:\Users\info\.dotnet\tools;C:\MiKTeX\miktex\bin\x64\;C:\Users\info\AppData\Local\Programs\Microsoft VS Code\bin;C:\altera_pro\25.3.1\questa_fe\win64;C:\altera_pro\25.3.1\questa_fse\win64& "C:\Users\info\.icestudio\venv\Scripts\apio.exe" --version
+
+>>(OUTPUT): apio, version 0.9.5
+
+
+  Error flag: false
+  No Errors. Toolchain installed--
+****************** INSTALLATION COMPLETED! **************
+
+
+
